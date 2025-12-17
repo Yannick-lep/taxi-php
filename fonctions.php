@@ -77,6 +77,6 @@ function getNbLigneTable($pdo,$table){
      $sql = "SELECT COUNT(*) FROM `".$table ."`";
         $stmt = $pdo->prepare($sql);
         $stmt->execute();
-        $count= $stmt->fetch();
-        return $last_insert_id;
+        $count= $stmt->fetchColumn();
+        return $count;
 }
