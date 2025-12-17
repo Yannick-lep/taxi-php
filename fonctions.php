@@ -56,7 +56,7 @@ function ajoutVehicule($pdo,$marqueParam, $modeleParam, $couleurParam, $immatric
     ]);
 }
 
-function updateVehicule($pdo, $marqueParam, $modeleParam, $couleurParam, $immatriculationParam){
+function updateVehicule($pdo, $marqueParam, $modeleParam, $couleurParam, $immatriculationParam,$idParam){
     $sql = "UPDATE vehicule SET marque = :marque, modele = :modele, couleur = :couleur, :immatriculation = immatriculation WHERE id_vehicule = :id";
 }
 function supprimerVehicule($pdo, $id)
