@@ -11,7 +11,7 @@
         <?php
             if (count($vehiculeArray) === 0) :
                 echo '<h3>Aucun véhicule !</h3>';
-                echo '<a href="'. WEB8ROOT . '/vehicule/add-vehicule.php" role="button">Ajouter un vehicule</a>';
+                echo '<a href="'. WEB_ROOT . '/vehicule/add-vehicule.php" role="button">Ajouter un vehicule</a>';
                 die();
             endif;
             ?>
