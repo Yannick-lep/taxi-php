@@ -13,26 +13,26 @@
 
 <body>
     <main class="container">
-        <h1 style="color:gold;">Ajouter un vehicule</h1>
+        <h1 style="color:gold;">Editer un véhicule</h1>
         <form action="" method="POST">
             <div>
                 <label for="marque">Marque</label>
-                <input type="text" name="marque" required>
+                <input type="text" name="marque" value="<?= $vehicule['marque']; ?>" required>
             </div>
              <div>
                 <label for="modele">Modele</label>
-                <input type="text" name="modele" required>
+                <input type="text" name="modele" value="<?= $vehicule['modele']; ?>" required>
             </div>
             <div>
                 <label for="couleur">Couleur</label>
-                <input type="text" name="couleur" required>
+                <input type="text" name="couleur" value="<?= $vehicule['couleur']; ?>" required>
             </div>    
             <div>
                 <label for="immatriculation">Immatriculation</label>
-                <input type="text" name="immatriculation" required>
+                <input type="text" name="immatriculation" value="<?= $vehicule['immatriculation']; ?>" required>
             </div>     
             <div>
-                <button type="submit" name="envoyer">Ajouter vehicule</button>
+                <button type="submit" name="envoyer">Editer un vehicule</button>
             </div>               
         </form>
     </main>

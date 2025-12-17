@@ -12,16 +12,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['envoyer'])){
     $couleur = nettoyer($_POST['couleur']);
     $immatriculation = nettoyer($_POST['immatriculation']);
 
-    $sql = "INSERT INTO vehicule (marque,modele,couleur,immatriculation) VALUES(:marque,:modele,:couleur,:immatricualtion)";
-    $stmt = $pdo->prepare($sql);
-    $stmt->execute([
-        ':marque'         => $marque,
-        ':modele'         => $modele,
-        ':couleur'        => $couleur,
-        ':immatriculation' => $immatriculation
-    ]);
-    header("Location:" . WEB_ROOT . "/vehicule/list-vehicuule.php");
-    exit;
+   ajoutVehicule($pdo, $marque, $modele, $couleur, $immatriculation);
+
+   $vehiculeInserted = getLastInsertId($pdo);
+
+   if ($vehiculeInserted) {
+       header("Location:" . WEB_ROOT . "/vehicule/list-vehicule.php");
+       exit;
+   }
 }
 
 include PATH_PROJET . '/views/vehicule/add-vehicule-view.php';
