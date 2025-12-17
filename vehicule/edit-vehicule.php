@@ -1,17 +1,23 @@
 <?php
-include 'fonctions.php';
-require 'connexiondb.php';
+include dirname(__DIR__) . '/fonctions.php';
+require dirname(__DIR__) . '/connexiondb.php';
 
 $idVehicule = $_GET['id'] ?? null;
 
-if (!is_numeric($idVehicule)) {
-    dd("cete voiture n'existe pas !!!");
+if (!$idVehicule || !is_numeric($idVehicule)) {
+    dd("Cette voiture n'existe pas !!!");
 }
 
-$pdo = new PDO($dsn, $user, $pass, $option);
-$stm = $pdo->prepare("SELECT * FROM vehicule where id = :id");
+$sql = "SELECT * FROM vehicule WHERE id_vehicule = :id";
+$stm = $pdo->prepare($sql);
 $stm->bindParam(':id', $idVehicule, PDO::PARAM_INT);
-$stmConf = $stm->execute();
-$Vehicules = $stm->fetch();
+$stm->execute();
+
+$vehicule = $stm->fetch();
+
+if (!$vehicule) {
+    dd("Véhicule introuvable");
+}
+
 
 
