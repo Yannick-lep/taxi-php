@@ -11,6 +11,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['envoyer'])){
     $modele = nettoyer($_POST['modele']);
     $couleur = nettoyer($_POST['couleur']);
     $immatriculation = nettoyer($_POST['immatriculation']);
+    
 
    ajoutVehicule($pdo, $marque, $modele, $couleur, $immatriculation);
 
