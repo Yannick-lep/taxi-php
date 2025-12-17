@@ -16,6 +16,7 @@
             endif;
             ?>
     <h1 style="color:yellowgreen;">Liste des vehicules</h1>
+    <a href="<?=  WEB_ROOT . '/vehicule/add-vehicule.php' ?>" role="button" class="btn btn-primary" style="margin:5px;color:black;font-weight:bold;">Ajouter un vehicule</a>
     <table class="table table-hover">
         <thead>
             <tr class="table-primary">

@@ -2,7 +2,7 @@
 include dirname(__DIR__) . '/fonctions.php';
 require dirname(__DIR__) .'/connexiondb.php';
 
-if ($_SEVER['REQUEST_METHOD'] == 'POST' && isset($_POST['envoyer'])){
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['envoyer'])){
     //==============================================
     //traitement du formulaire d'ajout d'un vehicule
     //==============================================
@@ -20,7 +20,7 @@ if ($_SEVER['REQUEST_METHOD'] == 'POST' && isset($_POST['envoyer'])){
         ':couleur'        => $couleur,
         ':immatriculation' => $immatriculation
     ]);
-    header("Location:" .WEB_ROOT . "/vehicule/list-vehicuule.php");
+    header("Location:" . WEB_ROOT . "/vehicule/list-vehicuule.php");
     exit;
 }
 
