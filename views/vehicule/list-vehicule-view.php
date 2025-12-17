@@ -9,21 +9,21 @@
 <body>
     <main class="container">
         <?php
-            if (count($vehiculeArray) === 0) :
-                echo '<h3>Aucun véhicule !</h3>';
-                echo '<a href="'. WEB_ROOT . '/vehicule/add-vehicule.php" role="button">Ajouter un vehicule</a>';
+            if (count($vehiculeArray) === 0 ) :
+                echo '<h3>Aucun vehicule !</h3>';
+                echo '<a href="'.  WEB_ROOT . '/vehicule/add-vehicule.php" role="button">Ajouter un vehicule</a>';
                 die();
             endif;
-            ?>
+    ?>
     <h1 style="color:yellowgreen;">Liste des vehicules</h1>
     <a href="<?=  WEB_ROOT . '/vehicule/add-vehicule.php' ?>" role="button" class="btn btn-primary" style="margin:15px;color:black;font-weight:bold;">Ajouter un vehicule</a>
     <table class="table table-hover">
         <thead>
             <tr class="table-primary">
-                <th style="color: black;">Marque</th>
-                <th style="color: black;">Modele</th>
-                <th style="color: black;">Couleur</th>
-                <th style="color: black;">Action</th>
+                <th style="color: blue;">Marque</th>
+                <th style="color: blue;">Modele</th>
+                <th style="color: blue;">Couleur</th>
+                <th style="color: blue;">Action</th>
             </tr>
         </thead>
         <tbody>
