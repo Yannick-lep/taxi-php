@@ -118,6 +118,6 @@ function updateDriver($pdo, $nom, $prenom, $id) {
 }
 
 function supprimerDriver($pdo, $id) {
-    $stmt = $pdo->prepare("DELETE FROM driver WHERE id_driver = :id");
+    $stmt = $pdo->prepare("DELETE FROM conducteur WHERE id_conducteur = :id");
     return $stmt->execute([':id' => $id]);
 }

@@ -22,6 +22,7 @@
             <tr class="table-primary">
                 <th style="color: blue;">Nom</th>
                 <th style="color: blue;">Prenom</th>
+                <th style="color: blue;">Action</th>
             </tr>
         </thead>
         <tbody>

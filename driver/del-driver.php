@@ -8,9 +8,9 @@ if ( ! is_numeric($idSuppDriver)) {
     dd("Ce conducteur n'existe pas !!!");
 }
 
-$suppResultDriver =supprimerDriver($pdo,$idSuppDriver);
+$suppResultConducteur =supprimerDriver($pdo,$idSuppDriver);
 
-if($suppResultdriver) {
+if($suppResultConducteur) {
     header("Location: " .WEB_ROOT ."/driver/list-Driver.php");
     exit;
 }
