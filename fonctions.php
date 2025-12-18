@@ -80,3 +80,44 @@ function getNbLigneTable($pdo,$table){
         $count= $stmt->fetchColumn();
         return $count;
 }
+
+//======================================================
+function listerDrivers($pdo) {
+    $stmt = $pdo->query("SELECT * FROM conducteur ORDER BY id_conducteur DESC");
+    return $stmt->fetchAll();
+}
+
+function getDriver($pdo, $id) {
+    $stmt = $pdo->prepare("SELECT * FROM conducteur WHERE id_conducteur = :id");
+    $stmt->execute([':id' => $id]);
+    return $stmt->fetch();
+}
+
+function ajoutDriver($pdo, $nom, $prenom) {
+    $stmt = $pdo->prepare("
+        INSERT INTO conducteur (nom, prenom)
+        VALUES (:nom, :prenom)
+    ");
+    return $stmt->execute([
+        ':nom' => $nom,
+        ':prenom' => $prenom
+    ]);
+}
+
+function updateDriver($pdo, $nom, $prenom, $id) {
+    $stmt = $pdo->prepare("
+        UPDATE driver
+        SET nom = :nom, prenom = :prenom
+        WHERE id_driver = :id
+    ");
+    return $stmt->execute([
+        ':nom' => $nom,
+        ':prenom' => $prenom,
+        ':id' => $id
+    ]);
+}
+
+function supprimerDriver($pdo, $id) {
+    $stmt = $pdo->prepare("DELETE FROM driver WHERE id_driver = :id");
+    return $stmt->execute([':id' => $id]);
+}
