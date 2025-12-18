@@ -1,0 +1,13 @@
+.add-driver-btn {
+    margin: 15px;
+    color: black;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.add-driver-btn:hover {
+    background-color: #0056b3;
+    color: white;
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}

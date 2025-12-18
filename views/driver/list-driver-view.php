@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Conducteur</title>
     <link rel="stylesheet" href="https://bootswatch.com/5/solar/bootstrap.min.css">
+    <link rel="stylesheet" href="./style.css">
 </head>
 <body>
     <main class="container">
@@ -15,7 +16,7 @@
                 die();
             endif;
     ?>
-    <h1 style="color:yellowgreen;">Liste des Conducteurs</h1>
+    <h1 style="color:yellowgreen; text-align:center;">Liste des Conducteurs</h1>
     <a href="<?=  WEB_ROOT . '/driver/add-driver.php' ?>" role="button" class="btn btn-primary" style="margin:15px;color:black;font-weight:bold;">Ajouter un conducteur</a>
     <table class="table table-hover">
         <thead>
