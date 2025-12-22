@@ -2,8 +2,8 @@
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
-define("PATH_PROJET", $_SERVER['DOCUMENT_ROOT'] ."/php-taxis);
-define("WEB_ROOT", "/php.taxis");
+define("PATH_PROJET", $_SERVER['DOCUMENT_ROOT'] ."/taxi-php");
+define("WEB_ROOT", "/taxi-php");
 
 function dg($data)
 {
