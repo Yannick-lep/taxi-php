@@ -16,10 +16,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['envoyer'])){
      $couleur = nettoyer($_POST['couleur']);
      $immatriculation = nettoyer($_POST['immatriculation']);
 
-    updateVehicule($pdo, $marque, $modele, $couleur, $immatriculation,$idEditVehicule);
+    $testUpdate = updateVehicule($pdo, $marque, $modele, $couleur, $immatriculation,$idEditVehicule);
 
-    header("Location:" . WEB_ROOT . "/vehicule/list-vehicule.php");
-    exit;
+    redirect('/vehicule/list-vehicule.php');
 }
 include PATH_PROJET . '/views/vehicule/edit-vehicule-view.php';
 

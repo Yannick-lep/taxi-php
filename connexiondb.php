@@ -1,5 +1,5 @@
 <?php
-
+require 'config.php';
 // -------------------- CONFIG PDO --------------------
 $host    = 'localhost';
 $db      = 'taxis';
@@ -18,6 +18,6 @@ $options = [
 try {
     $pdo = new PDO($dsn, $user, $pass, $options);
 } catch (PDOException $erreur) {
-    echo 'Erreur de connexion PDO !!!' .$erreur->getMessage();
+    echo '<h1>Erreur de connexion PDO !!!</h1>' .$erreur->getMessage() . '<br>';
     die('Impossible de se connecter à la base de donnée !');
 }
